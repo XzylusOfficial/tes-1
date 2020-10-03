@@ -1,6 +1,6 @@
 import socket
 import os
-import system
+import sys
 import random
 
 def perintah():
@@ -29,7 +29,7 @@ def XzylusOfficial():
     if len(sys.argv) != 4:
         perintah()
     else:
-        flood(Sys.argv[1], int(sys.argv[2]), int(sys.argv[3]))
+        xzylus(sys.argv[1], int(sys.argv[2]), int(sys.argv[3]))
 
 if __name__ == '__main__':
     XzylusOfficial()
